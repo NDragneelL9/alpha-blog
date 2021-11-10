@@ -1,13 +1,23 @@
 @import "bootstrap/dist/css/bootstrap";
 
 .navbar {
-  background-color: #71b8f3 !important;
+  background-color: #000 !important;
 }
 
-.navbar-brand {
-  font-size: 2rem;
+.nav-link {
+  color: white !important;
 }
 
-h1 {
-  color: rgb(0, 1, 51);
+#logo-text {
+  float: left;
+  font-size: 2em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo-text:hover {
+  color: rgb(6, 139, 77);
+  text-decoration: none;
 }
