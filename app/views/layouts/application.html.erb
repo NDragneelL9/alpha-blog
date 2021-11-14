@@ -10,9 +10,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column">
     <%= render 'layouts/navbar'%>
-    <%= render 'layouts/messages'%>
-    <%= yield %>
+    <div class="bg-secondary">
+      <%= render 'layouts/messages'%>
+      <%= yield %>
+    </div>
+    
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white" style="left: 0; bottom: 0; width: 100%;">
+  <div class="container text-center">
+    <small>Copyright &copy; <%= link_to "Tim Frolov", "https://vk.com/dragneell9"%></small>
+  </div>
+</footer>
   </body>
 </html>

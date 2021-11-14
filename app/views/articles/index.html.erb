@@ -1,30 +1,28 @@
-<div class="bg-secondary">
-  <h1 class="text-center" style="position: relative; top: 30px; margin-bottom: 30px;">Articles</h1>
+<h1 class="text-center" style="position: relative; top: 30px; margin-bottom: 30px;">Articles</h1>
 
-  <div class="container">
-  <% @articles.each do |article| %>
-    <div class="row justify-content-md-center">
-      <div class="col-12 mt-4">
-        <div class="card text-center shadow mb-5 bg-body rounded">
-          <div class="card-header fst-italic">
-            by Tim Frolov
-          </div>
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to article.title, article_path(article), class: "link-success" %></h5>
-              <p class="card-text"><%= truncate(article.description, length: 100) %></p>
-              <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <%= link_to "View", article_path(article), class: "btn btn-success"%>
-                <%= link_to "Edit", edit_article_path(article), class: "btn btn-warning" %>
-                <%= link_to "Delete", article_path(article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
-              </div>
-            </div>
-          <div class="card-footer text-muted">
-            <small> Created <%= time_ago_in_words(article.created_at) %> ago,
-            edited <%= time_ago_in_words(article.updated_at) %> ago</small>
-          </div>
+<div class="container">
+<% @articles.each do |article| %>
+  <div class="row justify-content-md-center">
+    <div class="col-12 mt-4">
+      <div class="card text-center shadow mb-5 bg-body rounded">
+        <div class="card-header fst-italic">
+          by Tim Frolov
         </div>
-      <div>
-    </div>
-  <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to article.title, article_path(article), class: "link-success" %></h5>
+            <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <%= link_to "View", article_path(article), class: "btn btn-success"%>
+              <%= link_to "Edit", edit_article_path(article), class: "btn btn-warning" %>
+              <%= link_to "Delete", article_path(article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+            </div>
+          </div>
+        <div class="card-footer text-muted">
+          <small> Created <%= time_ago_in_words(article.created_at) %> ago,
+          edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+        </div>
+      </div>
+    <div>
   </div>
+<% end %>
 </div>

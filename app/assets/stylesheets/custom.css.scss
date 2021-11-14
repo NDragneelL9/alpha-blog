@@ -1,5 +1,10 @@
 @import "bootstrap/dist/css/bootstrap";
 
+html,
+body {
+  height: 100%;
+}
+
 .navbar {
   background-color: #000 !important;
 }
@@ -25,17 +30,8 @@
   height: 320px;
 }
 
-html,
-body {
-  height: 100%;
-}
-
-#page-content {
-  height: 100%;
-  background-color: lightcyan;
-}
-
 #home-container {
   position: relative;
   top: 30px;
+  height: 85vh;
 }
