@@ -1,17 +1,32 @@
-<%= form_with(model: @article, local: true) do |f| %>
-  
-  <p>
-    <%= f.label :title%><br/>
-    <%= f.text_field :title%>
-  </p>
-  
-  <p>
-    <%= f.label :description %><br/>
-    <%= f.text_area :description %>
-  </p>
-  
-  <p>
-    <%= f.submit %>
-  </p>
-  
-<% end %>
+<div class="container">
+  <%= render 'error_messages' %>
+
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(model: @article, class: "shadow p-3 bg-info rounded",local: true) do |f| %>
+        
+        <div class="mb-3">
+          <%= f.label :title, class: "fw-bold col-2 col-form-label" %>
+          <div class="col-12">
+            <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "Title of article" %>
+          </div>
+        </div>
+        
+        <div>
+          <%= f.label :description, class: "fw-bold col-2 col-form-label" %>
+          <div class="col-12">
+            <%= f.text_area :description, rows: 7, class: "form-control shadow rounded", placeholder: "Description of article" %>
+          </div>
+        </div>
+
+        <div class="mb-3 text-center">
+          <%= f.submit class: "btn btn-outline-dark btn-lg mt-4 ml-10" %>
+        </div>
+
+        <div class="text-center">
+          <%= link_to '[ Return ]', articles_path, class: "text-center text-dark" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
