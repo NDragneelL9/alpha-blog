@@ -10,7 +10,7 @@
         </div>
           <div class="card-body">
             <h5 class="card-title"><%= link_to article.title, article_path(article), class: "link-success" %></h5>
-            <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+            <div class="card-text"><%= simple_format(truncate(article.description, length: 100)) %></div>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
               <%= link_to "View", article_path(article), class: "btn btn-success"%>
               <%= link_to "Edit", edit_article_path(article), class: "btn btn-warning" %>
