@@ -36,6 +36,12 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <%= link_to "Log in", signin_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %>
+        </li>
       </ul>
       <form class="d-flex">
         <input
