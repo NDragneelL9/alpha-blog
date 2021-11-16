@@ -2,6 +2,10 @@
 <h1 class="text-center" style="position: relative; top: 20px; margin-bottom: 40px;"><%= @user.username %> profile</h1>
 <%= gravatar_for @user, size: 150 %>
 
+<div class="text-center mt-3">
+  <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-warning" %>
+</div>
+
 <h1 class="text-center" style="position: relative; top: 20px; margin-bottom: 40px;">Articles</h1>
 
 <%= render 'articles/article'%>
