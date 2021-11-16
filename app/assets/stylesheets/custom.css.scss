@@ -1,9 +1,9 @@
 @import "bootstrap/dist/css/bootstrap";
 
-html,
-body {
-  height: 100%;
-}
+// html,
+// body {
+//   height: 100%;
+// }
 
 .navbar {
   background-color: #000 !important;
@@ -34,4 +34,12 @@ body {
   position: relative;
   top: 30px;
   height: 85vh;
+}
+
+#sticky-footer {
+  width: 10px;
+  display: block;
+  position: relative;
+  bottom: 0;
+  left: 0;
 }
