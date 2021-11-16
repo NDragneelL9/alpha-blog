@@ -1,0 +1,30 @@
+<div class="container min-height">
+  <h1 class="text-center" style="margin-top: 20px; margin-bottom: 20px;">Our Bloggers</h1>
+
+  <div class="container">
+  <% @users.each do |user| %>
+    <div class="row justify-content-md-center">
+      <div class="col-12 mt-4">
+        <div class="card text-center shadow mb-5 bg-body rounded">
+          <div class="card-header fst-italic">
+          <%= link_to user.username, user %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to gravatar_for(user, size: 120), user %></h5>
+            <div class="card-text"><%= pluralize(user.articles.count, "article") %>
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <%= link_to "View profile", user, class: "btn btn-success"%>
+              <%= link_to "Edit", edit_user_path(user), class: "btn btn-warning" %>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+

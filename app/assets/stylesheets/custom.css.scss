@@ -1,10 +1,5 @@
 @import "bootstrap/dist/css/bootstrap";
 
-// html,
-// body {
-//   height: 100%;
-// }
-
 .navbar {
   background-color: #000 !important;
 }
@@ -31,15 +26,17 @@
 }
 
 #home-container {
-  position: relative;
-  top: 30px;
-  height: 85vh;
+  min-height: 82vh;
+  margin-top: 30px;
 }
 
-#sticky-footer {
-  width: 10px;
-  display: block;
+.footer {
   position: relative;
-  bottom: 0;
   left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.min-height {
+  min-height: 85vh;
 }
