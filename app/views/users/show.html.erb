@@ -8,6 +8,14 @@
 
 <h1 class="text-center" style="position: relative; top: 20px; margin-bottom: 40px;">Articles</h1>
 
+  <div class="flickr_pagination">
+      <%= will_paginate @articles, :container => false %>
+  </div>
+
 <%= render 'articles/article'%>
+
+  <div class="flickr_pagination">
+      <%= will_paginate @articles, :container => false %>
+  </div>
 
 </div>

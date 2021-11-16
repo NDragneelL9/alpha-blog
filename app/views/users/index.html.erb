@@ -1,6 +1,10 @@
 <div class="container min-height">
   <h1 class="text-center" style="margin-top: 20px; margin-bottom: 20px;">Our Bloggers</h1>
 
+  <div class="flickr_pagination">
+      <%= will_paginate @users, :container => false %>
+  </div>
+
   <div class="container">
   <% @users.each do |user| %>
     <div class="row justify-content-md-center">
@@ -25,6 +29,10 @@
       </div>
     </div>
   <% end %>
+  </div>
+  
+    <div class="flickr_pagination">
+      <%= will_paginate @users, :container => false %>
   </div>
 </div>
 
