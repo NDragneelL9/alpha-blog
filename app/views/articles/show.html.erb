@@ -11,8 +11,10 @@
           <div class="card-body">
             <div class="card-text text-start"><%= simple_format(@article.description) %></div>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <% if logged_in? && @article.user == current_user %>
               <%= link_to "Edit", edit_article_path(@article), class: "btn btn-warning" %>
               <%= link_to "Delete", article_path(@article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+            <% end %>
             </div>
           </div>
         <div class="card-footer text-muted">

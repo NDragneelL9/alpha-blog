@@ -19,7 +19,9 @@
             </div>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
               <%= link_to "View profile", user, class: "btn btn-success"%>
+            <% if logged_in? && user == current_user %>
               <%= link_to "Edit", edit_user_path(user), class: "btn btn-warning" %>
+            <% end %>
             </div>
           </div>
           <div class="card-footer text-muted">
