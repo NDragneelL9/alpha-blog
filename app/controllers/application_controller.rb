@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+  def require_user
+    if !logged_in?
+      flash[:alert] = "You are not authorized"
+      redirect_to signin_path
+    end
+  end
+
 end
