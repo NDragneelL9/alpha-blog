@@ -19,8 +19,13 @@
             </div>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
               <%= link_to "View profile", user, class: "btn btn-success"%>
-            <% if logged_in? && user == current_user %>
-              <%= link_to "Edit", edit_user_path(user), class: "btn btn-warning" %>
+            <% if logged_in? %>
+              <% if user == current_user %>
+                <%= link_to "Edit", edit_user_path(user), class: "btn btn-warning" %>
+              <% end %>
+              <% if current_user.admin? %>
+                <%= link_to "Delete account", user_path(user), method: :delete, data: { confirm: "Are you sure to delete this account?" }, class: "btn btn-danger" %>
+              <% end %>
             <% end %>
             </div>
           </div>
