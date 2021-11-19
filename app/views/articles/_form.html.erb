@@ -4,18 +4,19 @@
       <%= render 'shared/error_messages', obj: @article %>
       <%= form_with(model: @article, class: "shadow mb-5 p-3 bg-info rounded",local: true) do |f| %>
         
-        <div class="mb-3">
-          <%= f.label :title, class: "fw-bold col-2 col-form-label" %>
-          <div class="col-12">
-            <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "Title of article" %>
-          </div>
+        <%= f.label :title, class: "fw-bold col-2 col-form-label" %>
+        <div class="col-12">
+          <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "Title of article" %>
         </div>
         
-        <div>
-          <%= f.label :description, class: "fw-bold col-2 col-form-label" %>
-          <div class="col-12">
-            <%= f.text_area :description, rows: 7, class: "form-control shadow rounded", placeholder: "Description of article" %>
-          </div>
+        <%= f.label :description, class: "fw-bold col-2 col-form-label" %>
+        <div class="col-12">
+          <%= f.text_area :description, rows: 7, class: "form-control shadow rounded", placeholder: "Description of article" %>
+        </div>
+
+        <%= f.label :category, "Category list (can be empty)", class: "fw-bold col-4 col-form-label" %>
+        <div class="col-12">
+          <%= f.collection_select(:category_ids, Category.all,:id, :name, { prompt: "Select categories from the list below" }, { multiple: true, class: "form-select shadow rounded" }) %>
         </div>
 
         <div class="mb-3 text-center">
