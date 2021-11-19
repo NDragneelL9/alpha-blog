@@ -1,28 +1,29 @@
 <h2 class="text-center" style="position: relative; top: 30px; margin-bottom: 30px;"><%= @article.title %></h2>
 
-<div class="container" style="height: 85vh;">
+<div class="container">
   <div class="row justify-content-md-center">
     <div class="col-12 mt-4">
       <div class="card text-center shadow mb-5 bg-body rounded">
         <div class="card-header fst-italic">
-          by <%= @article.user.username %>
-          <%= link_to gravatar_for(@article.user, size: 80), user_path(@article.user) %>
+        by <%= link_to @article.user.username, user_path(@article.user) %>
         </div>
-          <div class="card-body">
-            <div class="card-text text-start"><%= simple_format(@article.description) %></div>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to @article.title, article_path(@article), class: "link-success" %></h5>
+          <div class="card-text"><%= simple_format(truncate(@article.description, length: 100)) %>
+          </div>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-            <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
+              <%= link_to "View", article_path(@article), class: "btn btn-success"%>
+              <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
               <%= link_to "Edit", edit_article_path(@article), class: "btn btn-warning" %>
               <%= link_to "Delete", article_path(@article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
-            <% end %>
+              <% end %>
             </div>
-          </div>
+        </div>
         <div class="card-footer text-muted">
           <small> Created <%= time_ago_in_words(@article.created_at) %> ago,
           edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
         </div>
-        <%= link_to '[ Return ]', articles_path, class: "text-center text-dark" %>
       </div>
-    <div>
+    </div>
   </div>
 </div>
