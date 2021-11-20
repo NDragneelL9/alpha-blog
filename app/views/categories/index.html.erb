@@ -16,6 +16,9 @@
             <div class="card-text">
               <%= pluralize(category.articles.count, "artcile") %>
             </div>
+            <% if current_user.admin? %>
+              <%= link_to "Delete", category_path(category), method: :delete, data: { confirm: "Are you sure to delete this category?" }, class: "btn btn-danger mt-2" %>
+            <% end %>
           </div>
           <div class="card-footer text-muted">
             <small> Created <%= time_ago_in_words(category.created_at) %> ago,
