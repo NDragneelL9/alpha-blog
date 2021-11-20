@@ -1,3 +1,23 @@
 <div class="container">
-<h1 class="text-center" style="position: relative; top: 20px; margin-bottom: 40px;">Category: <%= @category.name %></h1>
+  <h1 class="text-center" style="position: relative; top: 20px; margin-bottom: 40px;">Category: <%= @category.name %></h1>
+</div>
+
+<div class="text-center mt-3">
+  <% if logged_in? && current_user.admin? %>
+  <%= link_to "Edit category name", edit_category_path(@category), class: "btn btn-warning" %>
+  <% end %>
+</div>
+
+<h1 class="text-center" style="position: relative; top: 20px; margin-bottom: 40px;">Articles</h1>
+
+  <div class="flickr_pagination">
+      <%= will_paginate @articles, :container => false %>
+  </div>
+
+<%= render 'articles/article'%>
+
+  <div class="flickr_pagination">
+      <%= will_paginate @articles, :container => false %>
+  </div>
+
 </div>
